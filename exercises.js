@@ -65,14 +65,36 @@ var myModule = (function(){
         return low
     }
 
+    function findRand(){
+        var random = Math.floor(Math.random()*scores.length);
+        return scores[random];
+    }
+
+    function findPass(){
+        var passArr = []
+        for(i=0;i<scores.length;i++){
+            if(scores[i]>= 70){
+                passArr.push(scores[i])
+            }
+        }
+        return passArr.length;
+    }
+
+    function findFirst(){
+        return scores[0];
+    }
+
     return{
         findSum: findSum,
         findAvg: findAvg,
         findHigh: findHigh,
         findLow: findLow,
         findHigh: findHigh,
+        findRand: findRand,
+        findPass: findPass,
+        findFirst: findFirst,
 
 
     }
 }())
-console.log(myModule.findLow())
+console.log(myModule.findFirst())
